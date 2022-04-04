@@ -19,7 +19,7 @@ public class CloudinaryServiceImpl implements CloudinaryService {
 
     Cloudinary cloudinary;
 
-    private Map<String, String> valuesMap = new HashMap<>();
+    private final Map<String, String> valuesMap = new HashMap<>();
 
     public CloudinaryServiceImpl() {
         valuesMap.put("cloud_name", "dotnyzn9e");
