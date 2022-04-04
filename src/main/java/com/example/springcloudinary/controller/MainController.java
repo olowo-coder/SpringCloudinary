@@ -44,8 +44,9 @@ public class MainController {
             return new ResponseEntity<>(new Message("Invalid Request"), HttpStatus.BAD_REQUEST);
         }
         Map result = cloudinaryService.upload(multipartFile);
-        Image image = new Image((String) result.get("original filename"), (String) result.get("url"),
+        Image image = new Image((String) result.get("original_filename"), (String) result.get("url"),
                 (String) result.get("public_id"));
+        imageService.save(image);
         return new ResponseEntity<>(new Message("Image submitted"), HttpStatus.OK);
     }
 
